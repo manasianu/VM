@@ -143,3 +143,7 @@ resource "azurerm_managed_disk" "managed_disk" {
       lun                      = "${element(var.lun,count.index)}"
       caching                  = "None"
 }
+
+output "public_ip_address" {
+  value = "${azurerm_public_ip.pubip.ip_address}"
+}
